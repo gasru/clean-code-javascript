@@ -1,8 +1,8 @@
 # clean-code-javascript
 
-## Table of Contents
+## Содержание
 
-1. [Introduction](#introduction)
+1. [Введение](#введение)
 2. [Variables](#variables)
 3. [Functions](#functions)
 4. [Objects and Data Structures](#objects-and-data-structures)
@@ -15,33 +15,28 @@
 11. [Comments](#comments)
 12. [Translation](#translation)
 
-## Introduction
+## Введение
 
-![Humorous image of software quality estimation as a count of how many expletives
-you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
+![Юмористическое изображение оценки качества программного обеспечения как счет того, сколько ругательств приходится кричать при чтении кода](https://www.osnews.com/images/comics/wtfm.jpg)
 
-Software engineering principles, from Robert C. Martin's book
-[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for JavaScript. This is not a style guide. It's a guide to producing
-[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) software in JavaScript.
 
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of
-_Clean Code_.
+Принципы разработки программного обеспечения, из книги Роберта Мартина [_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), адаптированные для JavaScript. Это не руководство по стилю. Это руководство по созданию [читабельного, переиспользуемого и рефакторизированного](https://github.com/ryanmcdermott/3rs-of-software-architecture) программного обеспечения на JavaScript.
 
-Our craft of software engineering is just a bit over 50 years old, and we are
-still learning a lot. When software architecture is as old as architecture
-itself, maybe then we will have harder rules to follow. For now, let these
-guidelines serve as a touchstone by which to assess the quality of the
-JavaScript code that you and your team produce.
 
-One more thing: knowing these won't immediately make you a better software
-developer, and working with them for many years doesn't mean you won't make
-mistakes. Every piece of code starts as a first draft, like wet clay getting
-shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
-improvement. Beat up the code instead!
+
+
+Не каждый изложенный здесь принцип должен строго соблюдаться, и тем более нет нужды насаждать их повсеместно. Это руководящие принципы и не более того, но они систематизированы и проверены многолетним коллективным опытом авторов _Clean Code_.
+
+
+
+
+Специальности по разработке программного обеспечения чуть более 50 лет, и мы все еще многому учимся. Когда архитектура программного обеспечения так же стара, как сама архитектура, возможно, у нас будут более жесткие правила. На данный момент пусть эти рекомендации служат пробным камнем, с помощью которого можно оценить качество кода JavaScript, который вы и ваша команда создаете.
+
+
+
+
+
+Еще одна вещь: знание этого материала не сделают вас сразу лучшим разработчиком программного обеспечения, и работа с ними в течение многих лет не означает, что вы не допустите ошибок. Каждый фрагмент кода начинается как первый набросок, как будто влажная глина превращается в окончательную форму. Наконец, мы отсеиваем недостатки, когда рассматриваем это с нашими коллегами. Не мучайте себя за первые черновики, которые нуждаются в улучшении. Потрясите код вместо этого!
 
 ## **Variables**
 
