@@ -1,7 +1,27 @@
-Contributing to clean-code-javascript
+# Поддержка gasru/clean-code-javascript
 
-First off, thanks for taking the time to contribute!
+Прежде всего, спасибо, что нашли время внести свой вклад!
 
-The following is a set of guidelines for contributing to clean-code-javascript, which are hosted in the gasru Organization on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+Ниже приведен набор руководящих принципов для внесения вклада в [gasru/clean-code-javascript]. Это в основном руководящие принципы, а не правила. Прислушивайтесь к ним по своему усмотрению и не стесняйтесь вносить изменения в этот документ.
 
-Table Of Contents
+## Ветка по умолчанию
+
+[gasru/clean-code-javascript] (этот репозиторий) является _форком_ [ryanmcdermott/clean-code-javascript], который используется как _источник_. Форк синхронизирует содержимое источника в форме перевода на русский язык и является неотъемлемой частью источника как минимум в одностороннем порядке.
+
+Чтобы любой участник мог произвольно объединять и наследовать оба репозитория, в форке изменена ветка по умолчанию. Ею является ветка [⎇ russian].
+
+## Перевод
+
+Этот репозиторий является переводом. Все предложения по переводу должны быть синхронизированы по каждому абзацу с [ryanmcdermott/clean-code-javascript].
+
+### Пустые строки в переводе
+
+В переводе присутсвуют пустые строки для синхронизации каждого абзаца для увеличения скорости и обновления перевода.
+
+## Предложения по улучшению clean-code-javascript
+
+Этот репозиторий не рассматривает концептуальность, аутентичность или качество предлагаемых [ryanmcdermott/clean-code-javascript] принципов. Только перевод. Если вы считаете, что какое-то правило следует добавить, изменить или удалить, то вам необходимо создать запрос на внесение изменений в оригинальный репозиторий [ryanmcdermott/clean-code-javascript].
+
+[gasru/clean-code-javascript]: https://github.com/gasru/clean-code-javascript
+[ryanmcdermott/clean-code-javascript]: https://github.com/ryanmcdermott/clean-code-javascript
+[⎇ russian]: https://github.com/gasru/clean-code-javascript/tree/russian
