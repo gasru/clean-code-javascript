@@ -92,14 +92,14 @@ getUser();
 **Плохо:**
 
 ```javascript
-// What the heck is 86400000 for?
+// Какого черта, что за 86400000?
 setTimeout(blastOff, 86400000);
 ```
 
 **Хорошо:**
 
 ```javascript
-// Declare them as capitalized named constants.
+// Объявляем их как прописные именованные константы.
 const MILLISECONDS_IN_A_DAY = 86_400_000;
 
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
