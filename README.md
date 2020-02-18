@@ -3,7 +3,7 @@
 ## Содержание
 
 1. [Введение](#введение)
-2. [Variables](#variables)
+2. [Переменные](#переменные)
 3. [Functions](#functions)
 4. [Objects and Data Structures](#objects-and-data-structures)
 5. [Classes](#classes)
