@@ -4,7 +4,7 @@
 
 1. [Введение](#введение)
 2. [Переменные](#переменные)
-3. [Functions](#functions)
+3. [Функции](#функции)
 4. [Objects and Data Structures](#objects-and-data-structures)
 5. [Classes](#classes)
 6. [SOLID](#solid)
@@ -227,37 +227,37 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 **[⬆ к содержанию](#содержание)**
 
-## **Functions**
+## **Функции**
 
-### Function arguments (2 or fewer ideally)
+### Аргументы функции (в идеале 2 или меньше)
 
-Limiting the amount of function parameters is incredibly important because it
-makes testing your function easier. Having more than three leads to a
-combinatorial explosion where you have to test tons of different cases with
-each separate argument.
+Ограничение количества параметров функции невероятно важно, потому что это облегчает тестирование вашей функции. Наличие более трех аргументов приводит к комбинаторному взрыву, когда вам приходится тестировать множество различных случаев с каждым отдельным аргументом.
 
-One or two arguments is the ideal case, and three should be avoided if possible.
-Anything more than that should be consolidated. Usually, if you have
-more than two arguments then your function is trying to do too much. In cases
-where it's not, most of the time a higher-level object will suffice as an
-argument.
 
-Since JavaScript allows you to make objects on the fly, without a lot of class
-boilerplate, you can use an object if you are finding yourself needing a
-lot of arguments.
 
-To make it obvious what properties the function expects, you can use the ES2015/ES6
-destructuring syntax. This has a few advantages:
 
-1. When someone looks at the function signature, it's immediately clear what
-   properties are being used.
-2. It can be used to simulate named parameters.
-3. Destructuring also clones the specified primitive values of the argument
-   object passed into the function. This can help prevent side effects. Note:
-   objects and arrays that are destructured from the argument object are NOT
-   cloned.
-4. Linters can warn you about unused properties, which would be impossible
-   without destructuring.
+Один или два аргумента - идеальный случай, и, если возможно, следует избегать трех. Что-то большее, чем это, должно быть объединено Обычно, если у вас более двух аргументов, ваша функция пытается сделать слишком много. В тех случаях, когда это не так, в большинстве случаев общего объекта, покрывающего все параметры, достаточно в качестве аргумента.
+
+
+
+
+
+Поскольку JavaScript позволяет создавать объекты на лету, без большого количества обвязки классов, вы можете использовать объект, если вам нужно много аргументов.
+
+
+
+Чтобы было очевидно, какие свойства ожидает функция, вы можете использовать синтаксис деструктуризации ES2015/ES6. Это имеет несколько преимуществ:
+
+
+1. Когда кто-то смотрит на сигнатуру функции, сразу становится ясно, какие свойства используются.
+
+2. Может использоваться для имитации именованных параметров.
+3. Деструктурирование также клонирует указанные примитивные значения объекта аргумента, переданного в функцию. Это может помочь предотвратить побочные эффекты. Примечание: объекты и массивы, которые деструктурированы из объекта аргумента, НЕ клонируются.
+
+
+
+4. Линтеры могут предупредить вас о неиспользованных свойствах, которые были бы невозможны без деструктуризации.
+
 
 **Плохо:**
 
@@ -287,13 +287,13 @@ createMenu({
 
 **[⬆ к содержанию](#содержание)**
 
-### Functions should do one thing
+### Функции должны делать что-то одно
 
-This is by far the most important rule in software engineering. When functions
-do more than one thing, they are harder to compose, test, and reason about.
-When you can isolate a function to just one action, it can be refactored
-easily and your code will read much cleaner. If you take nothing else away from
-this guide other than this, you'll be ahead of many developers.
+Это, безусловно, самое важное правило в разработке программного обеспечения. Когда функции выполняют больше чем одну цель, их сложнее составлять, тестировать и внедрять. Когда вы можете изолировать функцию только одним действием, ее можно легко реорганизовать, и ваш код будет читаться намного чище. Если вы не унесете ничего из этого руководства, кроме этого, вы будете впереди многих разработчиков.
+
+
+
+
 
 **Плохо:**
 
@@ -323,7 +323,7 @@ function isActiveClient(client) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Function names should say what they do
+### Имена функций должны говорить, что они делают
 
 **Плохо:**
 
@@ -334,7 +334,7 @@ function addToDate(date, month) {
 
 const date = new Date();
 
-// It's hard to tell from the function name what is added
+// Трудно сказать по имени функции, что добавляется
 addToDate(date, 1);
 ```
 
@@ -351,11 +351,11 @@ addMonthToDate(1, date);
 
 **[⬆ к содержанию](#содержание)**
 
-### Functions should only be one level of abstraction
+### Функции должны быть только одного уровня абстракции
 
-When you have more than one level of abstraction your function is usually
-doing too much. Splitting up functions leads to reusability and easier
-testing.
+Когда у вас есть более одного уровня абстракции, ваша функция обычно выполняет слишком много. Разделение функций приводит к повторному использованию и упрощению тестирования.
+
+
 
 **Плохо:**
 
@@ -375,11 +375,11 @@ function parseBetterJSAlternative(code) {
 
   const ast = [];
   tokens.forEach(token => {
-    // lex...
+    // лексемы...
   });
 
   ast.forEach(node => {
-    // parse...
+    // парсинг...
   });
 }
 ```
@@ -391,7 +391,7 @@ function parseBetterJSAlternative(code) {
   const tokens = tokenize(code);
   const syntaxTree = parse(tokens);
   syntaxTree.forEach(node => {
-    // parse...
+    // парсинг...
   });
 }
 
@@ -423,28 +423,28 @@ function parse(tokens) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Remove duplicate code
+### Удаляйте повторяющийся код
 
-Do your absolute best to avoid duplicate code. Duplicate code is bad because it
-means that there's more than one place to alter something if you need to change
-some logic.
+Делайте все возможное, чтобы избежать дублирования кода. Дублирующися код плох, потому что это означает, что есть несколько мест, где необходимо будет что-то изменить, если вам нужно изменить логику.
 
-Imagine if you run a restaurant and you keep track of your inventory: all your
-tomatoes, onions, garlic, spices, etc. If you have multiple lists that
-you keep this on, then all have to be updated when you serve a dish with
-tomatoes in them. If you only have one list, there's only one place to update!
 
-Oftentimes you have duplicate code because you have two or more slightly
-different things, that share a lot in common, but their differences force you
-to have two or more separate functions that do much of the same things. Removing
-duplicate code means creating an abstraction that can handle this set of
-different things with just one function/module/class.
 
-Getting the abstraction right is critical, that's why you should follow the
-SOLID principles laid out in the _Classes_ section. Bad abstractions can be
-worse than duplicate code, so be careful! Having said this, if you can make
-a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself
-updating multiple places anytime you want to change one thing.
+Представьте, что вы управляете рестораном и следите за своими продуктами: помидоры, лук, чеснок, специи и т.д. Если у вас есть несколько списков, которые вы ведете, то все они должны обновляться, когда вы подаете блюдо с помидорами в них. Если у вас есть только один список, есть только одно место для обновления!
+
+
+
+
+Часто у вас есть дублирующийся код, потому что у вас есть две или более слегка отличающиеся друг от друга вещи, которые имеют много общего, но их различия вынуждают вас иметь две или более отдельных функции, которые выполняют много одинаковых функций. Удаление дублирующего кода означает создание абстракции, которая может обрабатывать этот набор разных вещей с помощью только одной функции/модуля/класса.
+
+
+
+
+
+Правильное определение абстракции имеет решающее значение, поэтому вы должны следовать принципам SOLID, изложенным в разделе _Classes_. Плохие абстракции могут быть хуже, чем дублирующий код, поэтому будьте осторожны! Сказав это, если вы можете сделать хорошую абстракцию, сделайте это! Не повторяйте себя, иначе вы обнаружите, что обновляете несколько мест каждый раз, когда хотите что-то изменить.
+
+
+
+
 
 **Плохо:**
 
@@ -509,7 +509,7 @@ function showEmployeeList(employees) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Set default objects with Object.assign
+### Установите объекты по умолчанию с помощью Object.assign
 
 **Плохо:**
 
@@ -537,7 +537,7 @@ createMenu(menuConfig);
 ```javascript
 const menuConfig = {
   title: "Order",
-  // User did not include 'body' key
+  // Пользователь не включил ключ 'body'
   buttonText: "Send",
   cancellable: true
 };
@@ -553,7 +553,7 @@ function createMenu(config) {
     config
   );
 
-  // config now equals: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
+  // теперь config равен: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
   // ...
 }
 
@@ -562,9 +562,9 @@ createMenu(menuConfig);
 
 **[⬆ к содержанию](#содержание)**
 
-### Don't use flags as function parameters
+### Не используйте флаги в качестве параметров функции
 
-Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
+Флаги говорят вашему пользователю, что эта функция делает больше, чем одну вещь. Функции должны делать одно. Разделите ваши функции, если они следуют разным путям кода на основе логического значения.
 
 **Плохо:**
 
@@ -592,28 +592,28 @@ function createTempFile(name) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Avoid Side Effects (part 1)
+### Избегайте побочных эффектов (часть 1)
 
-A function produces a side effect if it does anything other than take a value in
-and return another value or values. A side effect could be writing to a file,
-modifying some global variable, or accidentally wiring all your money to a
-stranger.
+Функция создает побочный эффект, если она делает что-либо кроме принятия значения и возвращает другое значение или значения. Побочным эффектом может быть запись в файл, изменение некоторой глобальной переменной или случайная передача всех ваших денег незнакомцу.
 
-Now, you do need to have side effects in a program on occasion. Like the previous
-example, you might need to write to a file. What you want to do is to
-centralize where you are doing this. Don't have several functions and classes
-that write to a particular file. Have one service that does it. One and only one.
 
-The main point is to avoid common pitfalls like sharing state between objects
-without any structure, using mutable data types that can be written to by anything,
-and not centralizing where your side effects occur. If you can do this, you will
-be happier than the vast majority of other programmers.
+
+
+Допустим, вам нужно иметь побочные эффекты в программе. Как и в предыдущем примере, вам может потребоваться запись в файл. То, что вы должны сделать, это централизовать, где вы делаете это. Не имейте несколько функций и классов, которые пишут в определенный файл. Есть один сервис, который делает это. Один и только один.
+
+
+
+
+Суть в том, чтобы избежать распространенных ошибок, таких как совместное использование состояния между объектами без какой-либо структуры, использование изменяемых типов данных, которые могут быть записаны кем угодно, и не централизация того, где происходят ваши побочные эффекты. Если вы можете сделать это, вы будете счастливее, чем подавляющее большинство других программистов.
+
+
+
 
 **Плохо:**
 
 ```javascript
-// Global variable referenced by following function.
-// If we had another function that used this name, now it'd be an array and it could break it.
+// Глобальная переменная, на которую ссылается следующая функция.
+// Если бы у нас была другая функция, которая использовала бы это имя, теперь это был бы массив, и он мог бы его сломать.
 let name = "Ryan McDermott";
 
 function splitIntoFirstAndLastName() {
@@ -641,40 +641,40 @@ console.log(newName); // ['Ryan', 'McDermott'];
 
 **[⬆ к содержанию](#содержание)**
 
-### Avoid Side Effects (part 2)
+### Избегайте побочных эффектов (часть 2)
 
-In JavaScript, primitives are passed by value and objects/arrays are passed by
-reference. In the case of objects and arrays, if your function makes a change
-in a shopping cart array, for example, by adding an item to purchase,
-then any other function that uses that `cart` array will be affected by this
-addition. That may be great, however it can be bad too. Let's imagine a bad
-situation:
+В JavaScript примитивы передаются по значению, а объекты/массивы передаются по ссылке. В случае объектов и массивов, если ваша функция вносит изменения в массив корзины покупок, например, добавляя элемент для покупки, это дополнение повлияет на любую другую функцию, которая использует этот массив `cart`. Это может быть здорово, но может быть и плохо. Давайте представим себе плохую ситуацию:
 
-The user clicks the "Purchase" button which calls a `purchase` function that
-spawns a network request and sends the `cart` array to the server. Because
-of a bad network connection, the `purchase` function has to keep retrying the
-request. Now, what if in the meantime the user accidentally clicks "Add to Cart"
-button on an item they don't actually want before the network request begins?
-If that happens and the network request begins, then that purchase function
-will send the accidentally added item because it has a reference to a shopping
-cart array that the `addItemToCart` function modified by adding an unwanted
-item.
 
-A great solution would be for the `addItemToCart` to always clone the `cart`,
-edit it, and return the clone. This ensures that no other functions that are
-holding onto a reference of the shopping cart will be affected by any changes.
 
-Two caveats to mention to this approach:
 
-1. There might be cases where you actually want to modify the input object,
-   but when you adopt this programming practice you will find that those cases
-   are pretty rare. Most things can be refactored to have no side effects!
 
-2. Cloning big objects can be very expensive in terms of performance. Luckily,
-   this isn't a big issue in practice because there are
-   [great libraries](https://facebook.github.io/immutable-js/) that allow
-   this kind of programming approach to be fast and not as memory intensive as
-   it would be for you to manually clone objects and arrays.
+
+Пользователь нажимает кнопку "Купить", которая вызывает функцию `purchase`, которая порождает сетевой запрос и отправляет массив `cart` на сервер. Из-за плохого сетевого соединения функция `purchase` должна повторять запрос. А теперь, что если пользователь случайно нажмет кнопку "Добавить в корзину" на элементе, который им на самом деле не нужен, до того, как начнется сетевой запрос? Если это произойдет, и начнется сетевой запрос, то эта функция покупки отправит случайно добавленный элемент, поскольку у него есть ссылка на массив корзины, который функция `addItemToCart` изменила, добавив нежелательный элемент.
+
+
+
+
+
+
+
+
+
+Отличным решением было бы для `addItemToCart` всегда клонировать корзину, редактировать ее и возвращать клон. Это гарантирует, что никакие другие функции, удерживающие ссылку на корзину, не будут затронуты какими-либо изменениями.
+
+
+
+Два предостережения при упоминании этого подхода:
+
+1. Могут быть случаи, когда вы действительно хотите изменить входной объект, но когда вы примете эту практику программирования, вы обнаружите, что такие случаи довольно редки. Большинство вещей может быть переработано, чтобы не иметь побочных эффектов!
+
+
+
+2. Клонирование больших объектов может быть очень дорогим с точки зрения производительности. К счастью, это не является большой проблемой на практике, потому что есть [отличные библиотеки](https://facebook.github.io/immutable-js/), которые позволяют такому подходу к программированию быть быстрым и не так интенсивно использовать память, как это было бы при  клонировании объектов и массивов вручную.
+
+
+
+
 
 **Плохо:**
 
@@ -694,17 +694,17 @@ const addItemToCart = (cart, item) => {
 
 **[⬆ к содержанию](#содержание)**
 
-### Don't write to global functions
+### Не пишите в глобальные функции
 
-Polluting globals is a bad practice in JavaScript because you could clash with another
-library and the user of your API would be none-the-wiser until they get an
-exception in production. Let's think about an example: what if you wanted to
-extend JavaScript's native Array method to have a `diff` method that could
-show the difference between two arrays? You could write your new function
-to the `Array.prototype`, but it could clash with another library that tried
-to do the same thing. What if that other library was just using `diff` to find
-the difference between the first and last elements of an array? This is why it
-would be much better to just use ES2015/ES6 classes and simply extend the `Array` global.
+Загрязнение глобальных объектов является плохой практикой в ​​JavaScript, поскольку вы можете столкнуться с другой библиотекой, и пользователь вашего API будет неосведомлен, пока не получит исключение в работе. Давайте подумаем над примером: что если вы захотите расширить встроенный в JavaScript метод Array, чтобы иметь метод `diff`, который мог бы показать разницу между двумя массивами? Вы можете написать свою новую функцию в `Array.prototype`, но она может конфликтовать с другой библиотекой, которая пыталась сделать то же самое. Что если эта другая библиотека просто использовала `diff`, чтобы найти разницу между первым и последним элементами массива? Вот почему было бы намного лучше просто использовать классы ES2015/ES6 и просто расширить глобальный массив `Array`.
+
+
+
+
+
+
+
+
 
 **Плохо:**
 
@@ -728,11 +728,11 @@ class SuperArray extends Array {
 
 **[⬆ к содержанию](#содержание)**
 
-### Favor functional programming over imperative programming
+### Предпочитайте функциональное над императивным программированием
 
-JavaScript isn't a functional language in the way that Haskell is, but it has
-a functional flavor to it. Functional languages can be cleaner and easier to test.
-Favor this style of programming when you can.
+JavaScript не является функциональным языком, каким является Haskell, но он имеет функциональную природу. Функциональные языки могут быть чище и проще для тестирования. Порадуйте этот стиль программирования, когда сможете.
+
+
 
 **Плохо:**
 
@@ -793,7 +793,7 @@ const totalOutput = programmerOutput.reduce(
 
 **[⬆ к содержанию](#содержание)**
 
-### Encapsulate conditionals
+### Инкапсулируйте условные выражения
 
 **Плохо:**
 
@@ -817,7 +817,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Avoid negative conditionals
+### Избегайте негативных условий
 
 **Плохо:**
 
@@ -845,16 +845,16 @@ if (isDOMNodePresent(node)) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Avoid conditionals
+### Избегайте условных выражений
 
-This seems like an impossible task. Upon first hearing this, most people say,
-"how am I supposed to do anything without an `if` statement?" The answer is that
-you can use polymorphism to achieve the same task in many cases. The second
-question is usually, "well that's great but why would I want to do that?" The
-answer is a previous clean code concept we learned: a function should only do
-one thing. When you have classes and functions that have `if` statements, you
-are telling your user that your function does more than one thing. Remember,
-just do one thing.
+Это кажется невыполнимой задачей. Услышав это, большинство людей говорят: "Как я должен делать что-либо без выражения `if`?" Ответ в том, что вы можете использовать полиморфизм для достижения одной и той же задачи во многих случаях. Второй вопрос обычно таков: "Ну, это здорово, но зачем мне это делать?" Ответ - предыдущая концепция чистого кода, которую мы изучили: функция должна делать только одно. Когда у вас есть классы и функции, в которых есть операторы `if`, вы говорите своему пользователю, что ваша функция делает больше, чем одно. Помните, просто сделайте одну вещь.
+
+
+
+
+
+
+
 
 **Плохо:**
 
@@ -905,12 +905,12 @@ class Cessna extends Airplane {
 
 **[⬆ к содержанию](#содержание)**
 
-### Avoid type-checking (part 1)
+### Избегайте проверки типов (часть 1)
 
-JavaScript is untyped, which means your functions can take any type of argument.
-Sometimes you are bitten by this freedom and it becomes tempting to do
-type-checking in your functions. There are many ways to avoid having to do this.
-The first thing to consider is consistent APIs.
+JavaScript нетипизирован, что означает, что ваши функции могут принимать аргументы любого типа. Иногда, вас может укусить эта свобода, и становится заманчивым делать проверку типов в ваших функциях. Есть много способов избежать этого. Первое, что нужно учитывать, - это согласованные API.
+
+
+
 
 **Плохо:**
 
@@ -934,17 +934,17 @@ function travelToTexas(vehicle) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Avoid type-checking (part 2)
+### Избегайте проверки типов (часть 2)
 
-If you are working with basic primitive values like strings and integers,
-and you can't use polymorphism but you still feel the need to type-check,
-you should consider using TypeScript. It is an excellent alternative to normal
-JavaScript, as it provides you with static typing on top of standard JavaScript
-syntax. The problem with manually type-checking normal JavaScript is that
-doing it well requires so much extra verbiage that the faux "type-safety" you get
-doesn't make up for the lost readability. Keep your JavaScript clean, write
-good tests, and have good code reviews. Otherwise, do all of that but with
-TypeScript (which, like I said, is a great alternative!).
+Если вы работаете с базовыми примитивными значениями, такими как строки и целые числа, и не можете использовать полиморфизм, но по-прежнему чувствуете необходимость проверки типов, вам следует рассмотреть возможность использования TypeScript. Это отличная альтернатива обычному JavaScript, так как предоставляет статическую типизацию поверх стандартного синтаксиса JavaScript. Проблема с ручной проверкой типов в обычном JavaScript заключается в том, что для того, чтобы сделать это правильно, требуется так много лишних слов, что ложная "безопасность типов", которую вы получаете, не восполняет потерянную читаемость. Держите JavaScript в чистоте, пишите хорошие тесты и получайте хорошие ревью кода. В противном случае, сделайте все это, но с TypeScript (который, как я уже сказал, является отличной альтернативой!).
+
+
+
+
+
+
+
+
 
 **Плохо:**
 
@@ -971,19 +971,19 @@ function combine(val1, val2) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Don't over-optimize
+### Не переусердствуй
 
-Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
-times, if you are optimizing then you are just wasting your time. [There are good
-resources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
-for seeing where optimization is lacking. Target those in the meantime, until
-they are fixed if they can be.
+Современные браузеры во время выполнения выполняют большую часть внутренней оптимизации. Часто, если вы оптимизируете, вы просто теряете время. [Есть хорошие ресурсы](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers), чтобы увидеть, где не хватает оптимизации. Нацельтесь на них, пока они не исправлены.
+
+
+
+
 
 **Плохо:**
 
 ```javascript
-// On old browsers, each iteration with uncached `list.length` would be costly
-// because of `list.length` recomputation. In modern browsers, this is optimized.
+// В старых браузерах каждая итерация с некэшированным `list.length` будет дорогостоящей
+// из-за пересчета `list.length`. В современных браузерах это оптимизировано.
 for (let i = 0, len = list.length; i < len; i++) {
   // ...
 }
@@ -999,11 +999,11 @@ for (let i = 0; i < list.length; i++) {
 
 **[⬆ к содержанию](#содержание)**
 
-### Remove dead code
+### Удалить мертвый код
 
-Dead code is just as bad as duplicate code. There's no reason to keep it in
-your codebase. If it's not being called, get rid of it! It will still be safe
-in your version history if you still need it.
+Мертвый код так же плох, как и дублирующийся код. Нет причин хранить его в своей кодовой базе. Если это не вызывается - избавьтесь от этого! Это все еще будет безопасно с вашей историей версий, если вам все еще это нужно.
+
+
 
 **Плохо:**
 
