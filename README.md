@@ -1033,21 +1033,21 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 
 **[⬆ к содержанию](#содержание)**
 
-## **Objects and Data Structures**
+## **Объекты и структуры данных**
 
-### Use getters and setters
+### Используйте геттеры и сеттеры
 
-Using getters and setters to access data on objects could be better than simply
-looking for a property on an object. "Why?" you might ask. Well, here's an
-unorganized list of reasons why:
+Использование методов получения и установки данных объектов может быть лучше, чем просто поиск свойства объекта. "Почему?", спросите вы. Ну, вот неорганизованный список причин, почему:
 
-- When you want to do more beyond getting an object property, you don't have
-  to look up and change every accessor in your codebase.
-- Makes adding validation simple when doing a `set`.
-- Encapsulates the internal representation.
-- Easy to add logging and error handling when getting and setting.
-- You can lazy load your object's properties, let's say getting it from a
-  server.
+
+
+- Если вы хотите сделать больше, чем получить свойство объекта, вам не нужно искать и менять каждый метод доступа в вашей кодовой базе.
+- Делает добавление проверки простым, когда делает `set`.
+- Инкапсулирует внутреннее представление.
+- Легко добавить ведение журнала и обработку ошибок при получении и настройке.
+- Вы можете лениво загрузить свойства вашего объекта, скажем, получить его с сервера.
+
+
 
 **Плохо:**
 
@@ -1069,17 +1069,17 @@ account.balance = 100;
 
 ```javascript
 function makeBankAccount() {
-  // this one is private
+  // это скрытое свойство
   let balance = 0;
 
-  // a "getter", made public via the returned object below
+  // геттер, доступ к нему через возвращенный объект ниже
   function getBalance() {
     return balance;
   }
 
-  // a "setter", made public via the returned object below
+  // сеттер, доступ к нему через возвращаемый объект ниже
   function setBalance(amount) {
-    // ... validate before updating the balance
+    // ... проверяйте перед обновлением баланса
     balance = amount;
   }
 
@@ -1096,9 +1096,9 @@ account.setBalance(100);
 
 **[⬆ к содержанию](#содержание)**
 
-### Make objects have private members
+### Делате объекты закрытыми
 
-This can be accomplished through closures (for ES5 and below).
+Это может быть достигнуто через замыкания (для ES5 и ниже).
 
 **Плохо:**
 
