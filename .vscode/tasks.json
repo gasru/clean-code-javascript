@@ -6,7 +6,7 @@
     {
       "label": "TOC",
       "type": "shell",
-      "command": "rm ./index.md* && echo \"<!--ts-->\n<!--te-->\n$(tail -n +17 ./README.md)\" > ./index.md && gh-md-toc --insert index.md"
+      "command": "rm -f ./README.FULL.TOC.md* || true && echo \"<!--ts-->\n<!--te-->\n$(tail -n +17 ./README.md)\" > ./README.FULL.TOC.md && gh-md-toc --insert README.FULL.TOC.md"
     }
   ]
 }

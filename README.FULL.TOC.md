@@ -1,5 +1,4 @@
 <!--ts-->
-* [asdfsadf](#asdfsadf)
   * [Введение](#введение)
   * [<strong>Переменные</strong>](#переменные)
     * [Используйте значимые и произносимые имена переменных](#используйте-значимые-и-произносимые-имена-переменных)
@@ -59,16 +58,9 @@
     * [Avoid positional markers](#avoid-positional-markers)
   * [Translation](#translation)
 
-<!-- Added by: user, at: Wed Feb 26 16:00:47 MSK 2020 -->
+<!-- Added by: user, at: Wed Feb 26 16:22:08 MSK 2020 -->
 
 <!--te-->
-
-
-
-# asdfsadf
-
-asdfsadfsdf
-asdfsda
 
 ## Введение
 
