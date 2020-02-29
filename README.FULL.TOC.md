@@ -29,7 +29,7 @@
     * [Удаляйте мертвый код](#удаляйте-мертвый-код)
   * [<strong>Объекты и структуры данных</strong>](#объекты-и-структуры-данных)
     * [Используйте геттеры и сеттеры](#используйте-геттеры-и-сеттеры)
-    * [Делате объекты закрытыми](#делате-объекты-закрытыми)
+    * [Делайте объекты закрытыми](#делайте-объекты-закрытыми)
   * [<strong>Classes</strong>](#classes)
     * [Prefer ES2015/ES6 classes over ES5 plain functions](#prefer-es2015es6-classes-over-es5-plain-functions)
     * [Use method chaining](#use-method-chaining)
@@ -58,7 +58,7 @@
     * [Avoid positional markers](#avoid-positional-markers)
   * [Translation](#translation)
 
-<!-- Added by: user, at: Wed Feb 26 17:16:53 MSK 2020 -->
+<!-- Added by: user, at: Sat Feb 29 09:53:31 MSK 2020 -->
 
 <!--te-->
 
@@ -1143,7 +1143,7 @@ account.setBalance(100);
 
 **[⬆ к содержанию](#содержание)**
 
-### Делате объекты закрытыми
+### Делайте объекты закрытыми
 
 Это может быть достигнуто через замыкания (для ES5 и ниже).
 
