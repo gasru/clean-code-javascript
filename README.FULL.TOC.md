@@ -30,10 +30,10 @@
   * [<strong>Объекты и структуры данных</strong>](#объекты-и-структуры-данных)
     * [Используйте геттеры и сеттеры](#используйте-геттеры-и-сеттеры)
     * [Делайте объекты закрытыми](#делайте-объекты-закрытыми)
-  * [<strong>Classes</strong>](#classes)
-    * [Prefer ES2015/ES6 classes over ES5 plain functions](#prefer-es2015es6-classes-over-es5-plain-functions)
-    * [Use method chaining](#use-method-chaining)
-    * [Prefer composition over inheritance](#prefer-composition-over-inheritance)
+  * [<strong>Классы</strong>](#классы)
+    * [Предпочитайте классы ES2015/ES6 обычным функциям ES5](#предпочитайте-классы-es2015es6-обычным-функциям-es5)
+    * [Используйте цепочки методов](#используйте-цепочки-методов)
+    * [Предпочитайте композицию наследованию](#предпочитайте-композицию-наследованию)
   * [<strong>SOLID</strong>](#solid)
     * [Single Responsibility Principle (SRP)](#single-responsibility-principle-srp)
     * [Open/Closed Principle (OCP)](#openclosed-principle-ocp)
@@ -58,7 +58,7 @@
     * [Avoid positional markers](#avoid-positional-markers)
   * [Translation](#translation)
 
-<!-- Added by: user, at: Sat Feb 29 09:53:31 MSK 2020 -->
+<!-- Added by: user, at: Sat Feb 29 10:11:49 MSK 2020 -->
 
 <!--te-->
 
@@ -1183,14 +1183,14 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 **[⬆ к содержанию](#содержание)**
 
-## **Classes**
+## **Классы**
 
-### Prefer ES2015/ES6 classes over ES5 plain functions
+### Предпочитайте классы ES2015/ES6 обычным функциям ES5
 
-It's very difficult to get readable class inheritance, construction, and method
-definitions for classical ES5 classes. If you need inheritance (and be aware
-that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
-classes until you find yourself needing larger and more complex objects.
+It's very difficult to get readable class inheritance, construction, and method definitions for classical ES5 classes. If you need inheritance (and be aware that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over classes until you find yourself needing larger and more complex objects.
+Очень трудно получить читаемые определения классов, наследования и методов для классических классов ES5. Если вам нужно наследование (и имейте в виду, что оно вам может быть и не нужно), предпочтите классы ES2015/ES6. Однако предпочитайте маленькие функции классам, пока не обнаружите, что вам нужны более крупные и сложные объекты.
+
+
 
 **Плохо:**
 
@@ -1270,13 +1270,13 @@ class Human extends Mammal {
 
 **[⬆ к содержанию](#содержание)**
 
-### Use method chaining
+### Используйте цепочки методов
 
-This pattern is very useful in JavaScript and you see it in many libraries such
-as jQuery and Lodash. It allows your code to be expressive, and less verbose.
-For that reason, I say, use method chaining and take a look at how clean your code
-will be. In your class functions, simply return `this` at the end of every function,
-and you can chain further class methods onto it.
+Этот шаблон очень полезен в JavaScript, и вы можете увидеть его во многих библиотеках, таких как jQuery и Lodash. Это позволяет вашему коду быть выразительным и менее многословным. По этой причине, я говорю, используйте цепочку методов и посмотрите, насколько чистым будет ваш код. В ваших функциях класса просто возвращайте `this` в конце каждой функции, и вы можете связать с ней другие методы класса.
+
+
+
+
 
 **Плохо:**
 
@@ -1322,25 +1322,25 @@ class Car {
 
   setMake(make) {
     this.make = make;
-    // NOTE: Returning this for chaining
+    // ПРИМЕЧАНИЕ: возвращаем это для создания цепочки
     return this;
   }
 
   setModel(model) {
     this.model = model;
-    // NOTE: Returning this for chaining
+    // ПРИМЕЧАНИЕ: возвращаем это для создания цепочки
     return this;
   }
 
   setColor(color) {
     this.color = color;
-    // NOTE: Returning this for chaining
+    // ПРИМЕЧАНИЕ: возвращаем это для создания цепочки
     return this;
   }
 
   save() {
     console.log(this.make, this.model, this.color);
-    // NOTE: Returning this for chaining
+    // ПРИМЕЧАНИЕ: возвращаем это для создания цепочки
     return this;
   }
 }
@@ -1350,24 +1350,24 @@ const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 
 **[⬆ к содержанию](#содержание)**
 
-### Prefer composition over inheritance
+### Предпочитайте композицию наследованию
 
-As stated famously in [_Design Patterns_](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
-you should prefer composition over inheritance where you can. There are lots of
-good reasons to use inheritance and lots of good reasons to use composition.
-The main point for this maxim is that if your mind instinctively goes for
-inheritance, try to think if composition could model your problem better. In some
-cases it can.
+Как сказано в [_Design Patterns_](https://en.wikipedia.org/wiki/Design_Patterns) в "Банде четырех", вы должны отдавать предпочтение композиции, а не наследованию. Есть много веских причин для использования наследования и множество веских причин для использования композиции. Суть этого принципа в том, что если ваш ум инстинктивно стремится к наследованию, попытайтесь подумать, может ли композиция лучше моделировать вашу проблему. В некоторых случаях это возможно.
 
-You might be wondering then, "when should I use inheritance?" It
-depends on your problem at hand, but this is a decent list of when inheritance
-makes more sense than composition:
 
-1. Your inheritance represents an "is-a" relationship and not a "has-a"
-   relationship (Human->Animal vs. User->UserDetails).
-2. You can reuse code from the base classes (Humans can move like all animals).
-3. You want to make global changes to derived classes by changing a base class.
-   (Change the caloric expenditure of all animals when they move).
+
+
+
+
+Тогда вы можете спросить: "Когда я должен использовать наследование?" Это зависит от вашей проблемы, но это хороший список случаев, когда наследование имеет больше смысла, чем композиция:
+
+
+
+1. Ваше наследование представляет собой отношение "есть", а не отношение "имеет" (Человек-> Животное против Пользователя-> Пользовательские детали).
+
+2. Вы можете повторно использовать код из базовых классов (люди могут двигаться как все животные).
+3. Вы хотите внести глобальные изменения в производные классы, изменив базовый класс. (Измените расход калорий у всех животных, когда они двигаются).
+
 
 **Плохо:**
 
@@ -1381,7 +1381,7 @@ class Employee {
   // ...
 }
 
-// Bad because Employees "have" tax data. EmployeeTaxData is not a type of Employee
+// Плохо, потому что сотрудники "имеют" налоговые данные. EmployeeTaxData не является типом Employee
 class EmployeeTaxData extends Employee {
   constructor(ssn, salary) {
     super();
