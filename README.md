@@ -5,7 +5,7 @@
 1. [Введение](#введение)
 2. [Переменные](#переменные)
 3. [Функции](#функции)
-4. [Objects and Data Structures](#objects-and-data-structures)
+4. [Объекты и структуры данных](#объекты-и-структуры-данных)
 5. [Classes](#classes)
 6. [SOLID](#solid)
 7. [Testing](#testing)
